@@ -1,0 +1,33 @@
+.stop-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  filter: blur(5px);
+  position: relative;
+  z-index: 1;
+
+}
+
+.active {
+  background: var(--color-active);
+}
+
+.inactive {
+  background: var(--color-inactive);
+}
+
+.up {
+  transform: translateY(-40px);
+}
+
+.down {
+  transform: translateY(40px);
+}
+
+.left {
+  transform: translateX(40px);
+}
+
+.right {
+  transform: translateX(-40px);
+}

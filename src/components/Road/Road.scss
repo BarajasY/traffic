@@ -1,0 +1,36 @@
+.road {
+  border: 3px dotted var(--color-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+   h1 {
+    font-size: var(--fs2);
+   }
+
+   /* .amount.up {
+    transform: translateY(200px);
+   }
+
+   .amount.down {
+    transform: translateY((-200px));
+   }
+
+   .amount.left {
+     transform: translateX(200px);
+    }
+    
+    .amount.right {
+      transform: translateX(-200px);
+   } */
+}
+
+.vertical {
+  height: 500px;
+  width: 30px;
+}
+
+.horizontal {
+  height: 30px;
+  width: 500px;
+}

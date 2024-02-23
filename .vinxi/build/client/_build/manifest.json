@@ -1,0 +1,61 @@
+{
+  "\u0000virtual:#vinxi/handler/client.css": {
+    "file": "assets/client-e646db03.css",
+    "src": "\u0000virtual:#vinxi/handler/client.css"
+  },
+  "_HttpStatusCode-d975f86e.js": {
+    "dynamicImports": [
+      "src/routes/index.tsx?pick=default&pick=$css",
+      "src/routes/[...404].tsx?pick=default&pick=$css"
+    ],
+    "file": "assets/HttpStatusCode-d975f86e.js",
+    "imports": [
+      "_web-b4f36f01.js"
+    ]
+  },
+  "_web-b4f36f01.js": {
+    "file": "assets/web-b4f36f01.js"
+  },
+  "node_modules/.pnpm/shikiji@0.9.19/node_modules/shikiji/dist/onig.wasm": {
+    "file": "assets/onig-fd885c2d.wasm",
+    "src": "node_modules/.pnpm/shikiji@0.9.19/node_modules/shikiji/dist/onig.wasm"
+  },
+  "src/routes/[...404].tsx?pick=default&pick=$css": {
+    "file": "assets/_...404_-200b1984.js",
+    "imports": [
+      "_web-b4f36f01.js",
+      "_HttpStatusCode-d975f86e.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/routes/[...404].tsx?pick=default&pick=$css"
+  },
+  "src/routes/index.css": {
+    "file": "assets/index-2ddee0c6.css",
+    "src": "src/routes/index.css"
+  },
+  "src/routes/index.tsx?pick=default&pick=$css": {
+    "css": [
+      "assets/index-2ddee0c6.css"
+    ],
+    "file": "assets/index-8d58a6cf.js",
+    "imports": [
+      "_web-b4f36f01.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/routes/index.tsx?pick=default&pick=$css"
+  },
+  "virtual:#vinxi/handler/client": {
+    "css": [
+      "assets/client-e646db03.css"
+    ],
+    "file": "assets/client-6b64d179.js",
+    "imports": [
+      "_HttpStatusCode-d975f86e.js",
+      "_web-b4f36f01.js"
+    ],
+    "isEntry": true,
+    "src": "virtual:#vinxi/handler/client"
+  }
+}
