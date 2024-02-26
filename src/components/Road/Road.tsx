@@ -1,9 +1,11 @@
-import { ParentComponent } from "solid-js";
+import { For, ParentComponent } from "solid-js";
 import './Road.scss';
-import { Road as R } from "~/types";
+import { Automobile as A, Road as R } from "~/types";
+import Automobile from "../Automobile/Automobile";
 
 type props = R & {
   active: boolean
+  autos: A[]
 }
 
 const Road: ParentComponent<props> = (props) => {
@@ -19,7 +21,16 @@ const Road: ParentComponent<props> = (props) => {
       class={`road ${type}`}
       >
       {props.children}
-      <h1 class={`amount ${props.direction}`}>{props.amount}</h1>
+      <div class={`autos ${props.direction}`}>
+        <For each={props.autos}>
+          {(autos) => (
+            <Automobile 
+              color={autos.color}
+              size="15px"
+            />
+          )}
+        </For>
+      </div>
     </div>
   );
 };

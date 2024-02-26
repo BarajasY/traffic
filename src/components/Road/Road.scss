@@ -8,21 +8,31 @@
     font-size: var(--fs2);
    }
 
-   /* .amount.up {
-    transform: translateY(200px);
+   .autos {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
    }
 
-   .amount.down {
-    transform: translateY((-200px));
+   .up, .down {
+    flex-direction: column;
+    min-height: 100px;
+    max-height: fit-content;
    }
 
-   .amount.left {
-     transform: translateX(200px);
-    }
-    
-    .amount.right {
-      transform: translateX(-200px);
-   } */
+   .left, .right {
+    flex-direction: row;
+    min-width: 100px;
+    max-width: fit-content;
+   }
+
+   .up {
+    transform: rotateZ(180deg);
+   }
+
+  .right {
+    transform: rotateZ(180deg);
+  }
 }
 
 .vertical {

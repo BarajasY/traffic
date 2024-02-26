@@ -5,6 +5,7 @@ import StopLight from "../StopLight/StopLight";
 import randomIntFromInterval from "~/utils/randomRange";
 import { Road as R } from "~/types";
 import Road from "../Road/Road";
+import colors from "~/colorsMap";
 
 const TrafficFrame: Component<{}> = (props) => {
 
@@ -48,10 +49,11 @@ const TrafficFrame: Component<{}> = (props) => {
 
   setInterval(() => {
     const numberRange = randomIntFromInterval(1, 4);
+    const randomInt = randomIntFromInterval(1, colors.size);
 
     if (numberRange === 1) {
       if (!(CurrentlyActive() === 'up')) {
-        setUpRoadAmount(UpRoadAmount() + 1)
+        setUpRoadAmount([...UpRoadAmount(), {color: colors.get(randomInt)!.color}])
       }
       if (CurrentlyActive() === 'left') {
         setLightTime(LightTime() + 1000)
@@ -60,7 +62,7 @@ const TrafficFrame: Component<{}> = (props) => {
     
     if (numberRange === 2) {
       if (!(CurrentlyActive() === 'down')) {
-        setDownRoadAmount(DownRoadAmount() + 1)
+        setDownRoadAmount([...DownRoadAmount(), {color: colors.get(randomInt)!.color}])
       }
       if (CurrentlyActive() === 'right') {
         setLightTime(LightTime() + 1000)
@@ -69,7 +71,7 @@ const TrafficFrame: Component<{}> = (props) => {
     
     if (numberRange === 3) {
       if (!(CurrentlyActive() === 'left')) {
-        setLeftRoadAmount(LeftRoadAmount() + 1)
+        setLeftRoadAmount([...LeftRoadAmount(), {color: colors.get(randomInt)!.color}])
       }
       if (CurrentlyActive() === 'down') {
         setLightTime(LightTime() + 1000)
@@ -78,7 +80,7 @@ const TrafficFrame: Component<{}> = (props) => {
     
     if (numberRange === 4) {
       if (!(CurrentlyActive() === 'right')) {
-        setRightRoadAmount(RightRoadAmount() + 1)
+        setRightRoadAmount([...RightRoadAmount(), {color: colors.get(randomInt)!.color}])
       }
       if (CurrentlyActive() === 'up') {
         setLightTime(LightTime() + 1000)
@@ -89,23 +91,27 @@ const TrafficFrame: Component<{}> = (props) => {
 
   setInterval(() => {
     if (CurrentlyActive() === 'up') {
-      if (UpRoadAmount() > 0) {
-        setUpRoadAmount(UpRoadAmount() - 1)
+      if (UpRoadAmount().length > 0) {
+        const temp = UpRoadAmount().slice(0, UpRoadAmount().length-1)
+        setUpRoadAmount(temp)
       }
     }
     if (CurrentlyActive() === 'right') {
-      if (RightRoadAmount() > 0) {
-        setRightRoadAmount(RightRoadAmount() - 1)
+      if (RightRoadAmount().length > 0) {
+        const temp = RightRoadAmount().slice(0, RightRoadAmount().length-1)
+        setRightRoadAmount(temp)
       }
     }
     if (CurrentlyActive() === 'down') {
-      if (DownRoadAmount() > 0) {
-        setDownRoadAmount(DownRoadAmount() - 1)
+      if (DownRoadAmount().length > 0) {
+        const temp = DownRoadAmount().slice(0, DownRoadAmount().length-1)
+        setDownRoadAmount(temp)
       }
     }
     if (CurrentlyActive() === 'left') {
-      if (LeftRoadAmount() > 0) {
-        setLeftRoadAmount(LeftRoadAmount() - 1)
+      if (LeftRoadAmount().length > 0) {
+        const temp = LeftRoadAmount().slice(0, LeftRoadAmount().length-1)
+        setLeftRoadAmount(temp)
       }
     }
   }, 600)
@@ -117,47 +123,51 @@ const TrafficFrame: Component<{}> = (props) => {
           <Road
             direction={UpRoad().direction}
             active={UpActive()}
-            amount={UpRoadAmount()}
+            amount={UpRoadAmount().length}
+            autos={UpRoadAmount()}
           >
             <StopLight
               direction={UpRoad().direction}
               active={UpActive()}
-              amount={UpRoadAmount()}
+              amount={UpRoadAmount().length}
             />
           </Road>
           <Road
             direction={DownRoad().direction}
             active={DownActive()}
-            amount={DownRoadAmount()}
-          >
+            amount={DownRoadAmount().length}
+            autos={DownRoadAmount()}
+            >
             <StopLight
               direction={DownRoad().direction}
               active={DownActive()}
-              amount={DownRoadAmount()}
-            />
+              amount={DownRoadAmount().length}
+              />
           </Road>
         </div>
         <div class="horizontal-wrapper">
           <Road
             direction={LeftRoad().direction}
             active={LeftActive()}
-            amount={LeftRoadAmount()}
+            amount={LeftRoadAmount().length}
+            autos={LeftRoadAmount()}
           >
             <StopLight
               direction={LeftRoad().direction}
               active={LeftActive()}
-              amount={LeftRoadAmount()}
+              amount={LeftRoadAmount().length}
             />
           </Road>
           <Road
             direction={RightRoad().direction}
             active={RightActive()}
-            amount={RightRoadAmount()}
+            amount={RightRoadAmount().length}
+            autos={RightRoadAmount()}
           >
             <StopLight
               direction={RightRoad().direction}
               active={RightActive()}
-              amount={RightRoadAmount()}
+              amount={RightRoadAmount().length}
             />
           </Road>
         </div>
