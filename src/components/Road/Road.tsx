@@ -21,7 +21,7 @@ const Road: ParentComponent<props> = (props) => {
       class={`road ${type}`}
       >
       {props.children}
-      <div class={`autos ${props.direction}`}>
+      <div class={`autos ${props.direction}-a`}>
         <For each={props.autos}>
           {(autos) => (
             <Automobile 

@@ -14,24 +14,32 @@
     align-items: start;
    }
 
-   .up, .down {
+   .up-a, .down-a {
     flex-direction: column;
-    min-height: 100px;
+    min-height: 150px;
     max-height: fit-content;
    }
 
-   .left, .right {
+   .left-a, .right-a {
     flex-direction: row;
-    min-width: 100px;
+    min-width: 150px;
     max-width: fit-content;
    }
 
-   .up {
-    transform: rotateZ(180deg);
-   }
+  .right-a {
+    transform: translateX(-140px);
+  }
 
-  .right {
-    transform: rotateZ(180deg);
+  .left-a {
+    transform: translateX(140px);
+  }
+
+  .up-a {
+    transform: translateY(-140px);
+  }
+
+  .down-a {
+    transform: translateY(140px);
   }
 }
 

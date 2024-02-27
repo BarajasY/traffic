@@ -4,6 +4,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
+
+  .information {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+    top: 0;
+    left: 0;
+    padding: var(--space-3);
+
+    p {
+      font-weight: 800;
+    }
+  }
 
   .wrapper {
     width: 50%;

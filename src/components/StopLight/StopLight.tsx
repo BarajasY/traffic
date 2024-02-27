@@ -4,6 +4,7 @@ import { Road } from "~/types";
 
 type props = Road & {
   active: boolean
+  identifier: number
 }
 
 const StopLight: Component<props> = (props) => {
@@ -14,7 +15,8 @@ const StopLight: Component<props> = (props) => {
     <div 
       class={`stop-light ${props.direction}`}
       classList={{'active': props.active, 'inactive': !props.active}}
-    >
+    > 
+    <h1>{props.identifier}</h1>
     </div>
   );
 };

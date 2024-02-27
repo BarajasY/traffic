@@ -6,3 +6,8 @@ export type Road = {
 export type Automobile = {
   color: string
 }
+
+export type Stats = {
+  quantity: number,
+  light: number
+}
